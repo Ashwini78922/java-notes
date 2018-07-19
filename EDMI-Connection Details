@@ -1,0 +1,126 @@
+Notify Research Data:
+SenderàReciever	FSPàCSL
+Source Topic Name	scbRdmMarketRsrchResearchPortalFMResearchNotifyResearchDataV1ReqT
+Destination Topic Name	scbRdmMarketRsrchResearchPortalFMResearchNotifyResearchDataV1ReqTTs
+Durable Subscriber ID (If applicable)	scbRdmMarketRsrchResearchPortalFMResearchNotifyResearchDataV1ReqTDS
+
+
+Other Common Configurations(For FSP):
+JMS / JNDI Provider URL	wmjmsnaming://SIT_JNDI01@10.20.175.71:6712/EDMIFramework
+Connection Factory	Rdm_FSP_ConnectionFactory
+Client Group	admin
+INITIAL CLASS	com.webmethods.jms.naming.WmJmsNamingCtxFactory
+LDAP User	
+SSL security setup	./config/security/certs/edmisittruststore.jks
+
+
+Other Common Configurations(For CSL):
+JMS / JNDI Provider URL	wmjmsnaming://SIT_JNDI01@10.20.175.71:6712/EDMIFramework
+Connection Factory	Rdm_CSL_ConnectionFactory
+Client Group	admin
+INITIAL CLASS	com.webmethods.jms.naming.WmJmsNamingCtxFactory
+LDAP User	
+SSL security setup	./config/security/certs/edmisittruststore.jks
+
+
+Notify User Data:
+SenderàReciever	SonaràCSL
+Source Topic Name	scbRdmMarketRsrchResearchPortalFMResearchNotifyUserDataV1ReqT
+Destination Topic Name	scbRdmMarketRsrchResearchPortalFMResearchNotifyUserDataV1ReqTTs
+Durable Subscriber ID (If applicable)	scbRdmMarketRsrchResearchPortalFMResearchNotifyAcknowledgementV1ReqTDS
+
+
+Other Common Configurations for Sonar:
+JMS / JNDI Provider URL	wmjmsnaming://SIT_JNDI01@10.20.175.71:6712/EDMIFramework	 
+Connection Factory	Rdm_Sonar_ConnectionFactory	 
+Client Group	admin	 
+INITIAL CLASS	com.webmethods.jms.naming.WmJmsNamingCtxFactory	 
+LDAP User		
+SSL security setup	 
+./config/security/certs/edmisittruststore.jks	 
+
+Other Common Configurations(For CSL):
+JMS / JNDI Provider URL	wmjmsnaming://SIT_JNDI01@10.20.175.71:6712/EDMIFramework
+Connection Factory	Rdm_CSL_ConnectionFactory
+Client Group	admin
+INITIAL CLASS	com.webmethods.jms.naming.WmJmsNamingCtxFactory
+LDAP User	
+SSL security setup	./config/security/certs/edmisittruststore.jks
+
+Notify Research Update:
+SenderàReciever	CSLàFSP 
+Sender Topic	scbRdmMarketRsrchResearchPortalFMResearchNotifyResearchUpdateV1ReqT
+Destination Topic Name	
+scbRdmMarketRsrchResearchPortalFMResearchNotifyResearchUpdateV1ReqFSP
+Durable Subscriber ID (If applicable)	scbRdmMarketRsrchResearchPortalFMResearchNotifyResearchUpdateV1ReqTDS
+
+SenderàReciever	CSLàSonar 
+Sender Topic	scbRdmMarketRsrchResearchPortalFMResearchNotifyResearchUpdateV1ReqT
+Destination Topic Name	
+scbRdmMarketRsrchResearchPortalFMResearchNotifyResearchUpdateV1ReqSonar
+Durable Subscriber ID (If applicable)	scbRdmMarketRsrchResearchPortalFMResearchNotifyResearchUpdateV1ReqTDS
+
+
+Other Common Configurations for CSL:
+JMS / JNDI Provider URL	wmjmsnaming://SIT_JNDI01@10.20.175.71:6712/EDMIFramework
+Connection Factory	Rdm_CSL_ConnectionFactory
+Client Group	admin
+INITIAL CLASS	com.webmethods.jms.naming.WmJmsNamingCtxFactory
+LDAP User	
+SSL security setup	 
+./config/security/certs/edmisittruststore.jks
+
+Other Common Configurations for FSP :
+JMS / JNDI Provider URL	wmjmsnaming://SIT_JNDI01@10.20.175.71:6712/EDMIFramework
+Connection Factory	Rdm_FSP_ConnectionFactory
+Client Group	admin
+INITIAL CLASS	com.webmethods.jms.naming.WmJmsNamingCtxFactory
+LDAP User	
+SSL security setup	 
+./config/security/certs/edmisittruststore.jks
+
+Other Common Configurations for Sonar :
+JMS / JNDI Provider URL	wmjmsnaming://SIT_JNDI01@10.20.175.71:6712/EDMIFramework
+Connection Factory	Rdm_Sonar_ConnectionFactory
+Client Group	admin
+INITIAL CLASS	com.webmethods.jms.naming.WmJmsNamingCtxFactory
+LDAP User	
+SSL security setup	 
+./config/security/certs/edmisittruststore.jks
+
+Notify Acknowledgement:
+SenderàReciever	CSLàFSP
+Sender Topic	scbRdmMarketRsrchResearchPortalFMResearchNotifyAcknowledgementV1ReqT
+Destination Topic Name	
+scbRdmMarketRsrchResearchPortalFMResearchNotifyAcknowledgementV1ReqFSP
+Durable Subscriber ID (If applicable)	scbRdmMarketRsrchResearchPortalFMResearchNotifyAcknowledgementV1ReqTDS
+
+
+Other Common Configurations for CSL:
+JMS / JNDI Provider URL	wmjmsnaming://SIT_JNDI01@10.20.175.71:6712/EDMIFramework
+Connection Factory	Rdm_CSL_ConnectionFactory
+Client Group	admin
+INITIAL CLASS	com.webmethods.jms.naming.WmJmsNamingCtxFactory
+LDAP User	
+SSL security setup	 
+./config/security/certs/edmisittruststore.jks
+
+Other Common Configurations for FSP:
+JMS / JNDI Provider URL	wmjmsnaming://SIT_JNDI01@10.20.175.71:6712/EDMIFramework
+Connection Factory	Rdm_FSP_ConnectionFactory
+Client Group	admin
+INITIAL CLASS	com.webmethods.jms.naming.WmJmsNamingCtxFactory
+LDAP User	
+SSL security setup	 
+./config/security/certs/edmisittruststore.jks
+
+
+Other Common Configurations for Sonar :
+JMS / JNDI Provider URL	wmjmsnaming://SIT_JNDI01@10.20.175.71:6712/EDMIFramework
+Connection Factory	Rdm_Sonar_ConnectionFactory
+Client Group	admin
+INITIAL CLASS	com.webmethods.jms.naming.WmJmsNamingCtxFactory
+LDAP User	
+SSL security setup	 
+./config/security/certs/edmisittruststore.jks
+
