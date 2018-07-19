@@ -1,0 +1,32 @@
+Compile time VS Run-Time VS Build-Time
+
+public class ConstantFolding {
+    static final  int number1 = 5;
+    static final  int number2 = 6;
+    static int number3 = 5;
+    static int number4= 6;
+    
+    public static void main(String[ ] args) {
+          int product1 = number1 * number2;             //line A
+          int product2 = number3 * number4;             //line B
+    }
+}
+
+Difference between lineA and line B? line A evaluates the product at compile time and line B evaluates the product at run
+time.
+
+2. An instance method overrides all the accessible instance methods with same signature defined in superclass.
+
+3. Method overridding(i.e. polymorphic behaviour) is occuring at run-time to determine stored object type.
+
+4. the polymorphism and overridding is applicable to non-sttaic methods(instance methods). Overridding a static method is
+known as hiding(static method) or shadowing(when for variables).
+
+5. Methods in a class overload one another if they have the same name and different signatures. Unlike overriding, 
+overloading happens at compile time. It knows at compile time based on the method arguments which has been passed.
+
+6. A variable obscures a type with the same name if both are in scope. Say, your instance and local variables have the same name.
+
+7. overriding and overloading are good, but avoid method hiding (i.e. having same name static methods in parent/child
+ classes), variable shadowing (i.e. having similar variable names in parent/child classes), and variable obscuring 
+(i.e. having same variable name for instance, static, and local variables).

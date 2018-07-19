@@ -1,0 +1,44 @@
+JDBC:
+-----
+
+1. Java JDBC is a Java API to connect and execute the queries with the database. JDBC has JDBC driver to connect with
+the databse.
+
+2. JDBC driver is a software component which enable Java application to interact with database.
+
+3. There are 4 types of drivers available:
+	-JDBC-ODBC bridge driver.
+	-Native API driver.(partially java driver)
+	-Network Protocol driver.(fully java driver)
+	-Thin driver(fully java driver)
+
+4. There are 5 steps to establish a connection between java application and database:
+	-Register the driver class.
+	-Create connection.
+	-Create a statement.
+	-Execute queries.
+	-Close connection.
+
+4.1. To register a driver class, forNmae() method of Class class is used, it takes string as parameter.
+		Class.forname("oracle.jdbc.driver.OracleDriver");
+
+4.2. To create connection, getConnection() method of DriverManager class is used:
+		Connection con= DriverManager.getConnection("jdbc:oracle:thin:@localhost:5071:xe","system","password");
+
+4.3. To create statement, createStatement() of Connection interface is used:
+		Statement stmt= con.createStatement();
+
+4.4. To execute the queries, executeQuery() method of Statement interface is used:
+		ResultSet rs= stmt.executeQuery("Select * from emp");
+
+4.5. To close conncetion:
+		con.close();
+
+5. There are 3  types of statement used in JDBC:
+	-Statement
+	-PreparedStatement
+	-ClosableStatement
+Class.forName("oracle.jdbc.driver.OracleDriver)
+Connection con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system","oracle");
+Statement stmt=con.createStatement(ResuktSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+ResultSet rs= stmt.executeQuery("Select * from table)

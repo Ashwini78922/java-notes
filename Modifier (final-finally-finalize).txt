@@ -1,0 +1,15 @@
+Modifiers:
+----------
+1. final variable can't be changed.
+   final method can't be overridden.
+   final class can't be inherited.
+
+2. finally is used in try/catch statement to almost always execute the code. Even when exception is thrown, this block
+of code is executed. this is maily used to close open connections till Java 7 but not in Java 7.
+Note: Java 7 has introduced the AutoCloseable interface to avoid the unsightly try/catch/finally(within finally 
+try/catch) blocks to close a resource. It also prevents potential resource leaks due to not properly closing a resource.
+Java 7 – try can have AutoCloseble types. InputStream and OutputStream classes now implements the Autocloseable interface.
+
+3. finalize is called when object is garbage collected. It rarely neends to be modified. It should not be used to release
+non-memory resource like sockets, file handles, database connections, etc because these resources are very limited in
+number and we never expect when finalize will kick in to release these non-memory resources through finalize()n method.

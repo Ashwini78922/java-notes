@@ -1,0 +1,42 @@
+String
+----------
+
+1. String variables are stored in "constant string pool". once the string reference changes its value, the older value remains
+remains in constant pool. it cann't be erased.
+These strings are also known as interned string.
+
+String str="Book";
+str="Pen"; // Book retais in string pool.
+
+2. String builder variable will be stored in stack. If the value are changed, new value replaces the old value.
+
+StringBuffer str= new StringBuffer("Book");
+str="pen";// Book will be replaced to pen
+
+Note: String Buffer is thread safe i.e. synchronised. hence performance is slow.
+
+3. String Builder is same as String Buffer except it is not thread safe i.e. not synchronised. Hence performance is fast.
+
+4. String instance created with new keyword are stored in Java heap memory.
+
+5. String class is designed with the Flyweightdesign pattern. Flyweight pattern is about sharing collection of objects.
+
+6. Stack: is where local variables both primitives like int, float, etc & references to objects in the heap and method
+ parameters are stored.
+
+7. Heap: is where objects are stored. For example, an instance of “Person” with name=”John” and age=25. 
+Strings will be stored in String Pool within the heap.
+
+8. String class is designed with the Flyweight design pattern in mind. Flyweight is all about re-usability without 
+having to create too many objects in memory.
+
+9.Immutable means that each time the value of and object has changed a new reference is created for it on stack. You 
+can't talk about immutability in case of primitive types,only the Wrapper Classes are immutable.
+
+10. String class is made immutable for performance, thread-safe, string pooling, hashing etc.
+
+11.Why is a char array i.e char[] preferred over String to store a password?
+ String is immutable in Java and stored in the String pool. Once it is created it stays in the pool until garbage 
+collected. This has greater risk of 
+1) someone producing a memory dump to find the password 
+2) the application accidently logging password as a readable string.

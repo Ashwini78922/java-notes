@@ -1,0 +1,15 @@
+Multithreading:
+----------------
+1. https://www.java-success.com/02-%E2%99%A5%E2%99%A6-3-java-multithreading-basics-heap-vs-stack-thread-safety-synchronization/
+
+2. How to fix concurrency issue: by controlling access to the shared object.
+Synchronized i.e. a lock on the method.
+
+3. why is locking of a method for thread safety is called synchronized not locked?When a method or block of code is locked with the reserved “synchronized” key word in Java, the memory (i.e. heap) where the shared data is kept is synchronized. This means,
+
+When a synchronized block or method is entered after the lock has been acquired by a thread, it first reads 
+(i.e. synchronizes) any changes to the locked object from the main heap memory to ensure that the thread that has the 
+lock has the current info before start executing. After the synchronized block has completed and the thread is ready to relinquish 
+the lock, all the changes that were made to the object that was locked is written or flushed back (i.e. synchronized) to the main 
+heap memory so that the other threads that acquire the lock next has the current info.
+
