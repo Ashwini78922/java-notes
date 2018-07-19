@@ -1,0 +1,63 @@
+Class Loading
+--------------
+Link: https://www.java-success.com/a-q10-top-50-core-java-interview-questions/
+
+1. The very first class is specially loaded with the help of static main() method declared in the class.A class loader creates 
+namespace. All JVM have atleast 1 classloader that is embedded within the JVM called bootstrap(primordial) class loader.
+The JVM has hooks to allow user defined class loader to be used in place of primordial class loader.	
+
+--Bootstrap class loader $JAVA_HOME/jre/lib (rt.jar)
+--Extension class loader $JAVA_HOME/jre/lib/ext/*.jar
+--System class loader $classpath -cp my.jar
+--User defined class loader
+
+2. Classed loaded by bootstrap loader has no visibility access to its descendants(i.e. extension, system etc)
+
+3. Class loaders use delegation model. The classes are looked up in the following order:
+	--cache(if already loaded)
+	--parent
+	--self
+This ensures that parent class loader has always  the opportunity to load a class at first. Also. it ensures that class
+loader sees only classes loaded by itself or its parent/ancestors and can't see the classes loaded by its descendents
+or siblings.
+
+4. If a class can be loaded, it is returned. Otherwise "ClassNotFoundException" is found.
+
+5. Class loaders are hierarchical and use delegation method while loading a class. Class loaders request their parents to 
+load a class first before attempting to load a class first. when a class loader loads a class, the child class never loads
+the same class again, hence uniqueness is maintained.
+
+6. Static class loading throws NoClassDefFoundError if the class is NOT FOUND whereas the dynamic class loading throws 
+ClassNotFoundException if the class is NOT FOUND. 
+
+7. How to load property file from classpath?
+   getResourceAsStream() is the method of java.lang.Class. This method finds the resource by implicitly delegating to 
+this object’s class loader.
+e.g.-
+final Properties properties = new Properties();
+try (final InputStream stream = this.getClass().getResourceAsStream("myapp.properties")) {
+    properties.load(stream);
+    /* or properties.loadFromXML(...) */
+}
+
+8. What is the benefit of loading a property file from classpath?
+   It is portable as your file is relative to the classpath. You can deploy the “jar” file containing your “property” 
+file to any location where the JVM is.
+Loading it from outside the classpath is NOT portable.
+
+9. When classes are loaded? There are exactly two cases:
+
+--when the new bytecode is executed (for example, MyClass mc = new MyClass())
+--when the bytecodes make a static reference to a class (for example, System.out).
+
+10. Static vs. Dynamic class loading
+Classes are statically loaded with Java’s “new” operator. Dynamic loading is a technique for programmatically invoking 
+the functions of a class loader at run-time by using Class.forName()
+
+11. Difference between loadClass and Class.forName?
+loadClass only loads the class but doesn’t initialize the object whereas Class.forName initialize the object after loading
+ it. For example, if you use ClassLoader.loadClass to load a JDBC driver, it won’t get registered, and you won’t be able 
+to use JDBC
+
+The java.lang.Class.forName(String className) method returns the Class object associated with the class or interface with 
+the given string name. This method throws ClassNotFoundException if the class is not found

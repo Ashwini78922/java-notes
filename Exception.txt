@@ -1,0 +1,10 @@
+Exception:
+----------
+1. Runtime exception: it is also known as unchecked exception indicating not required to be checked by the compiler.
+It is the superclass of all the exceptions that can be thrown during the execution of a program within the JVM.
+e.g. NPE, ArrayOutOfBoundException etc.
+
+2. Checked exceptions are verified by the compiler at compile-time  that a program contains handler like throws clause, try{},
+catch{} blocks  for handling  the checked exceptions, by analyzing which checked exceptions can result from execution of a 
+method or constructor.
+
